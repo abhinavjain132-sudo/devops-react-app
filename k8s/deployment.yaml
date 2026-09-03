@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: devops-react-app
-          image: abhinavjain11/devops-react-app:latest
+image: abhinavjain11/devops-react-app:d07657662a10c091fec5f0e3c019f67514af6e97
           ports:
             - containerPort: 5173
