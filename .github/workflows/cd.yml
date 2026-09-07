@@ -1,8 +1,8 @@
-name: CD - Deploy to Kubernetes
+name: CD - Deploy to Kubernetes 
 
 on:
   workflow_run:
-    workflows: ["React CI + Docker"]
+    workflows: ["CI"]
     types:
       - completed
 
