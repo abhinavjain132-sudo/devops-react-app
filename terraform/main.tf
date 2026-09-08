@@ -9,7 +9,19 @@ terraform {
 
 provider "local" {}
 
-resource "local_file" "hello" {
+module "file" {
+  source   = "./modules/file"
+  message  = var.message
   filename = "${path.module}/hello.txt"
-  content  = var.message
+}
+
+module "file_dev" {
+  source   = "./modules/file"
+  message  = "Hello from the Dev Module!"
+  filename = "${path.module}/dev.txt"
+}
+
+moved {
+  from = local_file.hello
+  to   = module.file.local_file.this
 }
